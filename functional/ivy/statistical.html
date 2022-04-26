@@ -261,6 +261,11 @@ Einstein summation convention.</p>
 <dt>return: </dt><dd><p>The array with sums computed.</p>
 </dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ii&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="go">array([ 0,  6, 12, 18, 24])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
