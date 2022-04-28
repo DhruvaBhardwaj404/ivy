@@ -248,21 +248,23 @@
 <dd><p>Sums the product of the elements of the input operands along dimensions specified using a notation based on the
 Einstein summation convention.</p>
 <dl>
-<dt>equation:</dt><dd><p>A str describing the contraction, in the same format as numpy.einsum.</p>
+<dt>equation</dt><dd><p>A str describing the contraction, in the same format as numpy.einsum.</p>
 </dd>
-<dt>operands: </dt><dd><blockquote>
+<dt>operands</dt><dd><blockquote>
 <div><p>seq of arrays, the inputs to contract (each one an ivy.Array), whose shapes should be consistent with equation.</p>
 </div></blockquote>
 <dl class="simple">
-<dt>out:</dt><dd><p>optional output array, for writing the result to.Returns</p>
+<dt>out</dt><dd><p>optional output array, for writing the result to.Returns</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<dl class="simple">
-<dt>return: </dt><dd><p>The array with sums computed.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>ret</dt><dd><p>The array with sums computed.</p>
 </dd>
 </dl>
+</div></blockquote>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ii&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
 <span class="go">ivy.array([ 0,  6, 12, 18, 24])</span>
