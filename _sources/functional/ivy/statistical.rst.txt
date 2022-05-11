@@ -21,4 +21,6 @@ Statistical
    statistical/sum.rst
    statistical/std.rst
    statistical/einsum.rst
+   statistical/einsum.rst
+   statistical/einsum.rst
 
