@@ -2,30 +2,40 @@ from_dlpack
 ===========
 
 .. autofunction:: ivy.functional.ivy.creation.from_dlpack
+
+.. autofunction:: ivy.array.array_methods.from_dlpack
+
+.. autofunction:: ivy.container.container_methods.static_from_dlpack
+
+.. autofunction:: ivy.container.container_methods.from_dlpack
 |
 | **Supported Frameworks:**
 
-|empty| |jax_logo| |empty| |tf_logo| |empty| |pytorch_logo| |empty| |mxnet_logo| |empty| |numpy_logo| |empty|
+|jax_logo| |tf_logo| |pytorch_logo| |mxnet_logo| |numpy_logo|
 
 .. |jax_logo| image:: ../../../logos/supported/jax_logo.png
-   :width: 14%
    :target: https://jax.readthedocs.io
 
 .. |tf_logo| image:: ../../../logos/supported/tensorflow_logo.png
-   :width: 14%
    :target: https://www.tensorflow.org
 
 .. |pytorch_logo| image:: ../../../logos/supported/pytorch_logo.png
-   :width: 14%
    :target: https://pytorch.org
 
 .. |mxnet_logo| image:: ../../../logos/supported/mxnet_logo.png
-   :width: 14%
    :target: https://mxnet.apache.org
 
 .. |numpy_logo| image:: ../../../logos/supported/numpy_logo.png
-   :width: 14%
    :target: https://numpy.org
 
-.. |empty| image:: ../../../logos/supported/empty.png
-   :width: 4%
+
+.. toctree::
+   :hidden:
+   :maxdepth: -1
+   :caption: from_dlpack
+
+   from_dlpack/from_dlpack_functional.rst
+   from_dlpack/from_dlpack_array.rst
+   from_dlpack/from_dlpack_container.rst
+   from_dlpack/static_from_dlpack_container.rst
+

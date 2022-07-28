@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>variable_data &mdash; Ivy 1.0 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="icon" type="image/png" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true">
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -15,12 +16,13 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="stop_gradient" href="stop_gradient.html" />
-    <link rel="prev" title="is_variable" href="is_variable.html" /> 
+    <link rel="prev" title="ivy.Container.static_is_variable" href="is_variable/static_is_variable_container.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,8 +47,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../extensions.html">Extensions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deep_dive.html">Deep Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Functional</span></p>
+<p class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../activations.html">Activations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compilation</a></li>
@@ -73,7 +77,6 @@
 <li class="toctree-l2"><a class="reference internal" href="lamb_update.html">lamb_update</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../image.html">Image</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../layers.html">Layers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linear_algebra.html">Linear algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../losses.html">Losses</a></li>
@@ -88,16 +91,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../statistical.html">Statistical</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../utility.html">Utility</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Stateful</span></p>
+<p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -126,8 +134,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../ivy.html">&lt;no title&gt;</a> &raquo;</li>
-          <li><a href="../gradients.html">Gradients</a> &raquo;</li>
+                    <li><a href="../gradients.html">Gradients</a> &raquo;</li>
       <li>variable_data</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/functional/ivy/gradients/variable_data.rst.txt" rel="nofollow"> View page source</a>
@@ -139,10 +146,10 @@
            <div itemprop="articleBody">
              
   <section id="variable-data">
-<h1>variable_data<a class="headerlink" href="#variable-data" title="Permalink to this headline"></a></h1>
+<h1>variable_data<a class="headerlink" href="#variable-data" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.gradients.variable_data">
-<span class="sig-prename descclassname"><span class="pre">ivy.functional.ivy.gradients.</span></span><span class="sig-name descname"><span class="pre">variable_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/gradients.html#variable_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.gradients.variable_data" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname">ivy.</span></span><span class="sig-name descname"><span class="pre">variable_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/gradients.html#variable_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.gradients.variable_data" title="Permalink to this definition"></a></dt>
 <dd><p>Some backends wrap arrays in a dedicated variable class. For those frameworks,
 this function returns that wrapped array. For frameworks which do not have a
 dedicated variable class, the function returns the data passed in.</p>
@@ -160,14 +167,14 @@ dedicated variable class, the function returns the data passed in.</p>
 <div class="line"><br /></div>
 <div class="line"><strong>Supported Frameworks:</strong></div>
 </div>
-<p><a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://jax.readthedocs.io"><img alt="jax_logo" src="../../../_images/jax_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://www.tensorflow.org"><img alt="tf_logo" src="../../../_images/tensorflow_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://pytorch.org"><img alt="pytorch_logo" src="../../../_images/pytorch_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://mxnet.apache.org"><img alt="mxnet_logo" src="../../../_images/mxnet_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a> <a class="reference external" href="https://numpy.org"><img alt="numpy_logo" src="../../../_images/numpy_logo.png" style="width: 14%;" /></a> <a class="reference internal" href="../../../_images/empty.png"><img alt="empty" src="../../../_images/empty.png" style="width: 4%;" /></a></p>
+<p class=supported_frameworks><a class="reference external logo" href="https://jax.readthedocs.io"><img alt="jax_logo" src="../../../_images/jax_logo.png" /></a> <a class="reference external logo" href="https://www.tensorflow.org"><img alt="tf_logo" src="../../../_images/tensorflow_logo.png" /></a> <a class="reference external logo" href="https://pytorch.org"><img alt="pytorch_logo" src="../../../_images/pytorch_logo.png" /></a> <a class="reference external logo" href="https://mxnet.apache.org"><img alt="mxnet_logo" src="../../../_images/mxnet_logo.png" /></a> <a class="reference external logo" href="https://numpy.org"><img alt="numpy_logo" src="../../../_images/numpy_logo.png" /></a></p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="is_variable.html" class="btn btn-neutral float-left" title="is_variable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="is_variable/static_is_variable_container.html" class="btn btn-neutral float-left" title="ivy.Container.static_is_variable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="stop_gradient.html" class="btn btn-neutral float-right" title="stop_gradient" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
